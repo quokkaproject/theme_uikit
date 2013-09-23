@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width" />
+    <title>Quokka CMS UIKIT template</title>
+
+    <link href="{{ theme_static('css/uikit.min.css') }}" rel="stylesheet">
+    <link href="{{ theme_static('css/main.css') }}" rel="stylesheet">
+    <script src="//cdn.jsdelivr.net/modernizr/2.6.2/modernizr.min.js"></script>
+    {% block head %}{% endblock %}
+  </head>
+
+  <body>
+
+    {%- block topbar -%}
+
+    <nav class="tm-navbar uk-navbar uk-navbar-attached">
+        <div class="uk-container uk-container-center">
+
+            <a class="uk-navbar-brand uk-visible-large" href="../index.html"><img class="uk-margin uk-margin-remove" src="images/logo_uikit.svg" width="90" height="30" title="UIkit" alt="UIkit"></a>
+
+            <ul class="uk-navbar-nav uk-visible-large">
+                <li><a href="documentation_get-started.html">Get Started</a></li>
+                <li><a href="components.html">Components</a></li>
+                <li class="uk-active"><a href="customizer.html">Customizer</a></li>
+
+                <!-- This is the container enabling the JavaScript -->
+                <li class="uk-parent" data-uk-dropdown>
+
+                    <!-- This is the menu item toggling the dropdown -->
+                    <a href="">...</a>
+
+                    <!-- This is the dropdown -->
+                    <div class="uk-dropdown uk-dropdown-navbar">
+                        <ul class="uk-nav uk-nav-navbar">
+                            <li><a href="">...</a></li>
+                        </ul>
+                    </div>
+
+                </li>
+
+            </ul>
+
+            <a href="#tm-offcanvas" class="uk-navbar-toggle uk-hidden-large" data-uk-offcanvas=""></a>
+
+            <div class="uk-navbar-brand uk-navbar-center uk-hidden-large"><img src="images/logo_uikit.svg" width="90" height="30" title="UIkit" alt="UIkit"></div>
+
+        </div>
+    </nav>
+    {%- endblock -%}
+    <div class="uk-container uk-container-center">
+        <div class="uk-grid">
+            {% block page_header %}{% endblock %}
+        </div>
+        <div class="uk-grid">
+            {% block content %}{% endblock %}
+        </div>
+    </div>
+
+      <script src="//cdn.jsdelivr.net/jquery/2.0.3/jquery-2.0.3.min.js"></script>
+      <script src="{{ theme_static('js/uikit.min.js')}}"></script>
+      <script src="{{ theme_static('js/main.js')}}"></script>
+    {% block js_footer %}{% endblock %}
+  </body>
+</html>
